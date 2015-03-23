@@ -8,15 +8,15 @@ This is question, I implemented a trie data structure to count word occurrences.
 
 	 	  root
 	/    |     |	\
-   a(2)  b(0)  c(0)  e(0)
-   |     |     |	 |
-   p(0)  i(0)  a(0)  a(0)
-   |     |     |     |
-   p(0)  g(1)  t(1)  t(1)
-   |
-   l(0)
-   |
-   e(0)
+   	a(2)  b(0)  c(0)  e(0)
+   	|     |     |	 |
+   	p(0)  i(0)  a(0)  a(0)
+   	|     |     |     |
+	 p(0)  g(1)  t(1)  t(1)
+   	|
+	 l(0)
+   	|
+   	e(0)
 
 Each node in the trie has two fields, char letter and int count. The integer value in each node next to the letter indicates the word occurrence (i.e. the 2 next to 'a' means 'a' occurs twice, and 1 next to 'e' tells 'apple' occurs once).
 
