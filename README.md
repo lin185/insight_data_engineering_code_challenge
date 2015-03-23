@@ -36,5 +36,22 @@ Trie data structure algorithm:
 
 
 
+Question 2, running median
+
+This this problem, I implemented Heap data structure. The running median is computed using two heaps - Max Heap and Min Heap. All the numbers less than or equal to the current median are in the Max Heap, which is arranged so that the maximum number is at the root of the heap. All the numbers greater than or equal to the current median are in the Min Heap, which is arranged so that the minimum number is at the root of the heap. Also, instead of inserting duplicate numbers to heap, I create a Node structure which has a integer field that counts the occurrences of the numbers. Thus, every node in the heap has distinct value (the value represents words count for a line). This saves a hugh ammount of memory space. 
+
+For example, if a file has 5 lines of 10 words, 8 lines of 20 words, and 7 lines of 30 words. After parsing the file, heaps will look like the following:
+
+	Max Heap		Current Median			Min Heap
+	(20, 5)				20			(20, 3)
+	/							/
+       (10, 5)						      (30, 7)
+       
+       
+The algorithm complexity is:
+O(n) for inserting value into heap, since I need to linearly check whether the heap already contains the value.
+O(1) for calculating current median
+Memory space cost is O(M) where M is the number of distinct values.
+
 
 
