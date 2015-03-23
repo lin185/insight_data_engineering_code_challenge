@@ -26,13 +26,15 @@ The trie data structure is very efficient, insert one word costs O(word_length),
 
 In order to test the performance of trie, I implemented a brute force algorithm, and run both algorithms on a large text file. The followings are some statistics:
 - Text file size: 6.5MB
-- Total words count: 1115049 words
+- Total words count: 1115049 words.
+
 Brute fource algorithm:
-	- Execution time: 30.757596 seconds
-	- The amount of memory used: 0.4645 MB
+	- Execution time: 30.757596 seconds.
+	- The amount of memory used: 0.4645 MB.
+	
 Trie data structure algorithm:
-	- Execution time: 0.678882 seconds
-	- The amount of memory used: 16.5517 MB
+	- Execution time: 0.678882 seconds.
+	- The amount of memory used: 16.5517 MB.
 
 
 
@@ -45,17 +47,17 @@ For example, if a file has 5 lines of 10 words, 8 lines of 20 words, and 7 lines
 	Max Heap		
 	(20, 5)						
 	/							
-       (10, 5)	
+(10, 5)	
        
        	Min Heap
        (20, 3)
        /
-       (30, 7)
+(30, 7)
        
        
 The algorithm complexity is:
 O(n) for inserting value into heap, since I need to linearly check whether the heap already contains the value.
-O(1) for calculating current median
+O(1) for calculating current median.
 Memory space cost is O(M) where M is the number of distinct values.
 
 
