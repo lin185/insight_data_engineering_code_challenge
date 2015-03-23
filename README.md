@@ -47,12 +47,12 @@ For example, if a file has 5 lines of 10 words, 8 lines of 20 words, and 7 lines
 	Max Heap		
 	(20, 5)						
 	/							
- (10, 5)	
+	(10, 5)	
        
        	Min Heap
        (20, 3)
        /
- (30, 7)
+	(30, 7)
        
        
 The algorithm complexity is:
