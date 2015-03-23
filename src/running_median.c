@@ -30,14 +30,6 @@ void insertValToHeap(int type, int val);
 void deleteValFromHeap(int type, int val);
 void min_heapify(int i);
 void max_heapify(int i);
-void printHeap();
-
-
-int compare (const void * a, const void * b)
-{
-  return ( *(int*)a - *(int*)b );
-}
-
 
 
 /* A Heap Node */
@@ -70,7 +62,6 @@ int maxHeap_total_count;//count how many values are inserted into Max Heap
 int minHeap_total_count;//count how many values are inserted into Min Heap
 //Note: heap_node_count is NOT necessarily equal to heap_total_count. 
 float current_median;
-
 
 
 /* 
@@ -274,7 +265,6 @@ void deleteValFromHeap(int type, int val) {
 
 }
 
-
 /* 
  * This function, given a tree that is a heap except for node i, 
  * arranges node i and it's subtrees to satisfy the min heap property.
@@ -324,25 +314,6 @@ void max_heapify(int i) {
 }
 
 
-void printHeap(){
-	int i;
-	printf("Max Heap: \n");
-	for(i=0; i<maxHeap_node_count; i++) {
-		printf("(%d, %d) ", maxHeap[i].val, maxHeap[i].count);
-	}
-	printf("\n");
-
-	printf("Min Heap: \n");
-	for(i=0; i<minHeap_node_count; i++) {
-		printf("(%d, %d) ", minHeap[i].val, minHeap[i].count);
-	}
-	printf("\n\n");
-
-}
-
-
-
-
 /*
  * This function opens a input file, counts words for each line of the file,
  * then adds the word_count value to heap to calculate current median,
@@ -356,7 +327,7 @@ void running_median(char* intput_filepath, char *outpur_filepath) {
 		perror("Open file error");
 		return;
 	}
-	printf("Process %s\n", intput_filepath);
+	//printf("Process %s\n", intput_filepath);
 
 	char c = fgetc(fd);
 	int word_count = 0;
@@ -416,18 +387,6 @@ int main(int argc, char* argv[]) {
 		return 0;
 	}
 
-
-	/*srand(time(NULL));
-	int input_size = 100000;
-	int input[input_size];
-	int i;
-	for(i=0; i<input_size; i++) {
-		input[i] = rand() % 5000;
-		//printf("%d, ", input[i]);
-	}
-	//printf("\n\n\n");
-	*/
-
 	//1. Initialization
 	MAX_HEAP_SIZE = 256;
 	MIN_HEAP_SIZE = 256;
@@ -463,44 +422,5 @@ int main(int argc, char* argv[]) {
   		perror ("Open directory error");
   		return 0;
 	}
-
-	/*
-	int array[input_size];
-	int array_len = 0;
-
-	FILE *f1 = fopen("./1", "w");
-	FILE *f2 = fopen("./2", "w");
-	float m1;
-	float m2;
-	for(i=0; i<input_size; i++) {
-		if(i%10000 == 0)
-			printf("%d processed...\n", i);
-		array[array_len++] = input[i];
-		qsort(array, array_len, sizeof(int), compare);
-
-		if(array_len%2 == 1) {
-			//odd
-			m1 = (float)array[array_len/2];
-			//fprintf(f1, "%.1f\n", (float)array[array_len/2]);
-			//printf("%.1f, ", (float)array[array_len/2]);
-		} else {
-			//even
-			m1 = (array[array_len/2 - 1] + array[array_len/2 ])/2.0;
-			//fprintf(f1, "%.1f\n", (array[array_len/2 - 1] + array[array_len/2 ])/2.0);
-			//printf("%.1f, ", (array[array_len/2 - 1] + array[array_len/2 ])/2.0);
-		}
-		fprintf(f1, "%.1f\n", m1);
-	}
-	printf("method 1 done...\n\n\n");
-	fclose(f1);
-
-
-	for(i=0; i<input_size; i++) {
-		float median = updateHeap(input[i]);
-		fprintf(f2, "%.1f\n", median);
-		//printf("%.1f, ", median);
-	}
-	fclose(f2);
-	printf("method 2 done...\n\n\n");*/
 	return 0;
 }
