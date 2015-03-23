@@ -42,10 +42,15 @@ This this problem, I implemented Heap data structure. The running median is comp
 
 For example, if a file has 5 lines of 10 words, 8 lines of 20 words, and 7 lines of 30 words. After parsing the file, heaps will look like the following:
 
-	Max Heap		Current Median			Min Heap
-	(20, 5)				20			(20, 3)
-	/							/
-       (10, 5)						      (30, 7)
+	Max Heap		
+	(20, 5)						
+	/							
+       (10, 5)	
+       
+       	Min Heap
+       (20, 3)
+       /
+       (30, 7)
        
        
 The algorithm complexity is:
